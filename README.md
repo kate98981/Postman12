@@ -2,13 +2,13 @@
 ## Postman hw_2
 ### /first
 1. Отправить запрос.
-2. Статус код 200 </br>
+2. Статус код 200
 ```
 pm.test("Status code is 200", function () {
     pm.response.to.have.status(200);
 });
 ```
-3. Проверить, что в body приходит правильный string</br>. 
+3. Проверить, что в body приходит правильный string. 
 ```
 pm.test("Body is correct", function () { 
 pm.response.to.have.body("This is the first responce from server!");
@@ -16,58 +16,68 @@ pm.response.to.have.body("This is the first responce from server!");
 ```
 _______________________
 
-### /user_info_3 </br>
+### /user_info_3
 1. Отправить запрос.
 2. Статус код 200
 ```
->pm.test("Status code is 200", function () {</br>
-    pm.response.to.have.status(200);</br>
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
 });
 ```
 
-3. Спарсить response body в json. </br>
-`var resp = pm.response.json();`
-
-4. Проверить, что name в ответе равно name s request (name вбить руками.) </br>
-`pm.test("The response name is equal to the request name", function() {
+3. Спарсить response body в json.
+```
+var resp = pm.response.json();
+```
+4. Проверить, что name в ответе равно name s request (name вбить руками.)
+```
+pm.test("The response name is equal to the request name", function() {
     pm.expect(resp.name).to.eql("Kate");
-});`
-
-5. Проверить, что age в ответе равно age s request (age вбить руками.) </br>
-`pm.test("The response age is equal to the request age", function(){
+});
+```
+5. Проверить, что age в ответе равно age s request (age вбить руками.)
+```
+pm.test("The response age is equal to the request age", function(){
     pm.expect(resp.age).to.eql('23');
-});`
-
-6. Проверить, что salary в ответе равно salary s request (salary вбить руками.) </br>
-`pm.test("The response salary is equal to the request salary",function(){
+});
+```
+6. Проверить, что salary в ответе равно salary s request (salary вбить руками.)
+```
+pm.test("The response salary is equal to the request salary",function(){
     pm.expect(resp.salary).to.eql(1000);
-});`
-
-7. Спарсить request. </br>
-`var req = request.data;`
-
-8. Проверить, что name в ответе равно name s request (name забрать из request.) </br>
-`pm.test("The response name is equal to the request name", function() {
+});
+```
+7. Спарсить request.
+```
+var req = request.data;
+```
+8. Проверить, что name в ответе равно name s request (name забрать из request.)
+```
+pm.test("The response name is equal to the request name", function() {
     pm.expect(resp.name).to.eql(req.name);
-});`
-
-9. Проверить, что age в ответе равно age s request (age забрать из request.) </br>
-`pm.test("The response age is equal to the request age", function(){
+});
+```
+9. Проверить, что age в ответе равно age s request (age забрать из request.)
+```
+pm.test("The response age is equal to the request age", function(){
     pm.expect(resp.age).to.eql(req.age);
-});`
-
-10. Проверить, что salary в ответе равно salary s request (salary забрать из request.) </br>
-`pm.test("The response salary is equal to the request salary",function(){pm.expect(resp.salary).to.eql(Number(req.salary));
-});`
-
-11. Вывести в консоль параметр family из response.</br>
-`console.log(resp.family)`
-
-12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)</br>
-`pm.test("U_salary_1_5_year in the response is equal salary * 4 from the request", function(){
+});
+```
+10. Проверить, что salary в ответе равно salary s request (salary забрать из request.) 
+```
+pm.test("The response salary is equal to the request salary",function(){pm.expect(resp.salary).to.eql(Number(req.salary));
+});
+```
+11. Вывести в консоль параметр family из response.
+```
+console.log(resp.family)
+```
+12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)
+```
+pm.test("U_salary_1_5_year in the response is equal salary * 4 from the request", function(){
     pm.expect(resp.family.u_salary_1_5_year).to.eql(req.salary * 4)
 });
-`
+```
 _______________________
 
 ### /object_info_3
