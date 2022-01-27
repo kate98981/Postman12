@@ -3,13 +3,13 @@
 ### /first
 1. Отправить запрос.
 2. Статус код 200 </br>
->pm.test("Status code is 200", function () {</br>
-    pm.response.to.have.status(200);</br>
+>pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
 });
 
-3. Проверить, что в body приходит правильный string. </br>
->pm.test("Body is correct", function () { </br>
-    pm.response.to.have.body("This is the first responce from server!");</br>
+3. Проверить, что в body приходит правильный string. 
+>pm.test("Body is correct", function () { 
+    pm.response.to.have.body("This is the first responce from server!");
 });
 _______________________
 
