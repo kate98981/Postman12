@@ -19,9 +19,11 @@ _______________________
 ### /user_info_3 </br>
 1. Отправить запрос.
 2. Статус код 200
+```
 >pm.test("Status code is 200", function () {</br>
     pm.response.to.have.status(200);</br>
 });
+```
 
 3. Спарсить response body в json. </br>
 `var resp = pm.response.json();`
